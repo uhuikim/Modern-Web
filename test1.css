@@ -1,0 +1,41 @@
+.body{
+    margin: 0;
+    font-size: 2em;
+}
+
+h1,p {
+    margin: 0;
+}
+
+.container {
+}
+
+
+.item {
+    padding: 5%;
+}
+
+.item-a {
+    background: yellow;
+}
+
+.item-b {
+    background-color: yellowgreen;
+}
+
+@media screen and (min-width: 700px){
+    .container{
+        font-size: 0;
+    }
+    .item {
+        font-size: 1rem;
+        display: inline-block;
+        vertical-align: top;
+    }
+    .item-a{
+        width: 30%;
+    }
+    .item-b{
+        width: 50%;
+    }
+}
