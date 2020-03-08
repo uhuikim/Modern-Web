@@ -13,11 +13,11 @@
 #wrap {width: 100%;}
 #header {height: 325px; background:url(../img/header_bg.jpg) center top repeat-x;}
 #contents {}
-#footer {height: 200px; background: #111;}
+#footer {border-top:1px solid #eee; }
 
 
 /* 컨텐츠 레이아웃 */
-#cont_nav {background-color: #F6FDFF;}
+#cont_nav {background-color: #F6FDFF; display: none;}
 #cont_tit {background-color: #EAF7FD;}
 #cont_ban {background-color: #dceff7;}
 #cont_cont {background-color: #F6FDFF;}
@@ -101,30 +101,52 @@ text-align, width, heigth 는 블락에 먹힘
 .tit .btn {position: absolute; top:5px; right: 0; width: 60px; height: 60px; 
 background: url(../img/icon.png) no-repeat 0 -600px;}
 
+.tit .on {background-position: 0 -660px;}
+
 /*배너*/
-.ban{position: relative; padding:24px 0 20px;}/*아래 position의 기준*/
+
+/*.ban{position: relative; padding:24px 0 20px;}
 .ban a.prev{position: absolute; left: -80px; top: 60px; width: 43px; height: 43px;background: url(../img/icon.png) no-repeat -150px 0;}
 .ban a.next{position: absolute; right: -80px; top: 60px; width: 43px; height: 43px;background: url(../img/icon.png) no-repeat -150px -43px;}
 .ban a.prev:hover{background-position: -193px 0;}
-.ban a.next:hover{background-position: -193px -43px;}
+.ban a.next:hover{background-position: -193px -43px;}*/
 /*원칙적으로 css를 사용하는 방법 
 div#cont_ban div.container div.ban a.prev{}
 이렇게 적으면 복잡하기 때문에 div와 앞에꺼를 다 생략함
 최소한만 작업을 해준다.
 */
-
+/*
 .ban ul{ overflow: hidden;}
 .ban ul li{float: left; width: 330px;}
+*/
 
 /*배너를 정렬 하는 두가지 방법*/
-.ban ul li:last-child{text-align: right;}/*ie 9부터 사용가능*/
-.ban ul li:nth-child(2) {text-align: center;}/*ie 9부터 사용가능*/
-/*클래스 이름은 모든 버전에서 사용가능*/
+/*.ban ul li:last-child{text-align: right;} ie 9부터 사용가능*/
+/*.ban ul li:nth-child(2) {text-align: center;}/*ie 9부터 사용가능*/
+
+/*클래스 이름은 모든 버전에서 사용가능
 .ban ul li.ban_img1 {text-align: left;}
 .ban ul li.ban_img2 {text-align: center;}
 .ban ul li.ban_img3 {text-align: right;} 
 .ban ul li img{border: 4px solid #dcdcdc;}
-.ban ul li img:hover {border-color:  #98bcdc;}/*마우스 hover시 보더 색상 변경*/
+.ban ul li img:hover {border-color:  #98bcdc;}
+/*마우스 hover시 보더 색상 변경*/
+
+
+
+/* 슬릭 배너 */
+.ban {position: relative; padding:24px 0 20px;}
+.ban .slick-prev {position: absolute; left: -80px; top: 80px; width: 43px; height: 43px;background: url(../img/icon.png) no-repeat -150px 0; text-indent: -9999px;}
+.ban .slick-next {position: absolute; right: -80px; top: 80px; width: 43px; height: 43px;background: url(../img/icon.png) no-repeat -150px -43px; text-indent: -9999px;}
+.ban .slick-prev:hover {background-position: -193px 0;}
+.ban .slick-next:hover {background-position: -193px -43px;}
+.ban img {border: 4px solid #dcdcdc;}
+.ban img:hover {border-color:  #98bcdc;}
+.ban .slick-slide {margin: 10px;}
+.ban .slick-dots {position: absolute; bottom: 15px; display: block; width: 100%; text-align: center;}
+.ban .slick-dots li {display: inline-block; width: 15px; height: 15px; margin:5px ;}
+.ban .slick-dots li button {font-size: 0; line-height: 0; display: block; width: 15px; height: 15px; cursor: pointer; background-color: #5dbfeb; border-radius: 50%;}
+.ban .slick-dots li.slick-active button {background-color: #2b91c8; }
 
 
 /* 컨텐츠 박스 요소 width = padding + margin + border */
@@ -249,12 +271,10 @@ padding: 0 0 0 3px;}/*한줄효과 , 위에 a태그에 들어간 패딩값 수�
 
 
 /*갤러리*/
-.gallery {position: relative;;border: 1px solid #ccc; height: 254px; overflow: hidden;}
+.gallery {position: relative;;border: 1px solid #ccc; height: 254px; overflow: hidden;} 
 .gallery h4 {font-size: 14px; color:#0093bd; border-bottom: 1px solid #ccc; padding: 10px 0 8px 11px; font-weight: bold;}
 .gallery .gallery_btn {position: absolute; right: 5px; top: 7px;}
 .gallery .gallery_btn ul {overflow: hidden;}
-.gallery .gallery_btn ul li {float: left; margin: 1px 2px;}
-.gallery .gallery_btn ul li a {display: block; width: 23px; height: 23px; background: url(../img/icon.png) no-repeat;  }
 
 .gallery .gallery_btn ul li.gb_icon1 a {background-position: -150px -120px;}
 .gallery .gallery_btn ul li.gb_icon2 a {background-position: -150px -143px;}
@@ -266,3 +286,58 @@ padding: 0 0 0 3px;}/*한줄효과 , 위에 a태그에 들어간 패딩값 수�
 .gallery .gallery_btn ul li.gb_icon4 a:hover {background-position: -173px -189px;}
 
 .gallery .gallery_img img{ width: 100%;}/*화면 비율에 맞게 이미지크기가 조정이 됨*/
+
+
+/* 슬릭 갤러리 */
+.gallery .gallery_btn button {float: left; margin: 1px 2px; display: block; width: 23px; height: 23px; background: url(../img/icon.png) no-repeat;}
+.gallery .gallery_btn .gb_icon1 {background-position: -150px -120px;}
+.gallery .gallery_btn .gb_icon2 {background-position: -150px -143px;}
+.gallery .gallery_btn .gb_icon3 {background-position: -150px -166px;}
+.gallery .gallery_btn .gb_icon4 {background-position: -150px -189px;}
+.gallery .gallery_btn .gb_icon1:hover {background-position: -173px -120px;}
+.gallery .gallery_btn .gb_icon2:hover {background-position: -173px -143px;}
+.gallery .gallery_btn .gb_icon3:hover {background-position: -173px -166px;}
+.gallery .gallery_btn .gb_icon4:hover {background-position: -173px -189px;}
+
+
+
+
+/* 로그인 */
+#login_form {background-color: #f2f4f5; padding: 15px;}
+#login_form .login_header {overflow: hidden; font-size: 12px; height:30px ;}
+#login_form .login_header .lh_check { float: left; padding-right: 15px;}
+#login_form .login_header .lh_check .input_check {vertical-align: -2px;}
+#login_form .login_header .lh_ip {float: left;}
+#login_form .login_header .lh_ip em {color: #0093bd; text-decoration: underline;}
+#login_form .login_content {position: relative;}
+#login_form .login_content .lc_btn { position: absolute; right: 0; top: 0; width: 62px; height: 47px; background: #fff;
+  border: 1px solid #bebebe;}
+#login_form .login_content .input_text { width: 182px; height: 16px; padding: 2px 5px; border: 1px solid #bebebe; margin-bottom: 3px; background-color: #fff;}
+
+.login_footer {margin-top: 5px;}
+.login_footer li {display: inline;}
+.login_footer li a {font-size: 12px;}
+
+
+/* 팝업 */
+.popup h4 { font-size: 14px; color: #0093bd; padding-bottom: 4px; font-weight: 700;}
+.popup ul {overflow: hidden;}
+.popup li {float: left; width: 93px; margin-right: 5px;}
+.popup li.last { margin-right: 0;}
+.popup li img {width: 100%;}
+
+
+/* 푸터 */
+.footer {padding: 25px 0 ; text-align: center;}
+.footer ul {margin-bottom: 20px;}
+.footer li {position: relative ;display: inline; padding: 0 7px 0 10px;}
+.footer li::before {content: ''; width: 1px; height: 12px; background: #ccc; position: absolute; left: 0; top: 2px;}
+.footer li:first-child::before {width: 0; height: 0;}
+.footer .w3c {margin-top: 15px;}
+
+/* 레이어 */
+#layer {display: none;position: fixed; left: 50px; top: 50px; width: 700px; border: 1px solid #dceff7;
+box-shadow: 3px 3px 10px rgba(0,0,0,0.4);}
+#layer img {width: 100%; display: block;}
+#layer .close {position: absolute; right: 20px; top: 20px; background: #0093bd; padding: 1px 6px; color: #fff;}
+#layer .close:hover {text-decoration: underline;}
